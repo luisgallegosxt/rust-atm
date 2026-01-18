@@ -5,7 +5,7 @@ mod models;
 mod operations;
 
 fn main() {
-    let mut account = models::Account { balance: 0.0 };
+    let mut account = models::Account { balance: 0i64 };
     let mut transactions: Vec<Transaction> = vec![];
 
     println!("Welcome to the Rust ATM");

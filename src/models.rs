@@ -2,23 +2,23 @@ use chrono::{DateTime, Utc};
 use uuid::Uuid;
 
 pub struct Account {
-    pub balance: f32,
+    pub balance: i64,
 }
 #[derive(Debug)]
 pub struct Transaction {
-    id: Uuid,
-    created_on: DateTime<Utc>,
-    ttype: String,
-    amount: f32,
+    pub id: Uuid,
+    pub created_on: DateTime<Utc>,
+    pub ttype: String,
+    pub amount: i64,
 }
 
 impl Transaction {
-    pub fn new(ttype: String, amount: f32) -> Self {
+    pub fn new(ttype: String, amount: i64) -> Self {
         Transaction {
             id: Uuid::new_v4(),
             created_on: Utc::now(),
-            ttype: ttype,
-            amount: amount,
+            ttype,
+            amount,
         }
     }
 }
